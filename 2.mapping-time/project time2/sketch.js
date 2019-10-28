@@ -52,6 +52,8 @@ var secLocation = pointAt(width/2, height/2, hourAngle - 90, 150);
 // // var otherLocation = pointAt(secLocation.x, secLocation.y, secAngle, 30)
 var minLocation = pointAt(width/2, height/2, minAngle - 90, secc);
 
+var dayy = map(now.day, 0, 31, 0, 310)
+
 noStroke();
 if(now.hours < 13){
   fill('blue')
@@ -68,6 +70,9 @@ if(now.min <31){
 strokeWeight(6);
 
 line(width/2, height/2, minLocation.x, minLocation.y);
+
+circle(secLocation.x, secLocation.y, dayy);
+
 
 
 
