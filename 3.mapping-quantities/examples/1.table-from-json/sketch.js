@@ -52,6 +52,7 @@ function setup(){
     for (var country in data.tests){
       var value = data.tests[country][i]
       text(value, x, y)
+      // circle(x, y, value)
       y += rowHeight
     }
 
