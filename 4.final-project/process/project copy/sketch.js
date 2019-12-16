@@ -1,16 +1,15 @@
-var stockfiles
-var nukestate
+var numCharge
 
 function preload() {
-  stockfiles = loadTable("data/global nuclear - Sheet1.csv", "csv", "header");
-  // nukestate = loadTable("data/nuclear states - Sheet1.csv", "csv", "header");
+  numCharge = loadTable("data/number of charging station - Sheet1.csv", "csv", "header");
+
 }
 
 function setup() {
-  // createCanvas(3000, 2000, SVG);
-  createCanvas(3000, 2000);
-  numberOfRows = stockfiles.getRowCount();
-  numberOfColumns = stockfiles.getColumnCount();
+  // createCanvas(1500, 1000, SVG);
+  createCanvas(1500, 1000);
+  numberOfRows = numCharge.getRowCount();
+  numberOfColumns = numCharge.getColumnCount();
 
   // numberOfRows2 = nukestate.getRowCount();
   noLoop()
@@ -18,24 +17,23 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(250);
   fill(0);
   
   for (var i = 0; i < numberOfRows; i++) {
     // years
-    text(stockfiles.getString(i, 0), i * 20 + 10, 1680);
+    text(numCharge.getString(i, 0), i * 20 + 10, 600);
     //numbers
-    print(stockfiles.getRow(i))
-    var numBombs = stockfiles.getNum(i, 1);
-    var numState = stockfiles.getNum(i, 2);
+    print(numCharge.getRow(i))
+    var barCharge = numCharge.getNum(i, 1);
     //graph
     noStroke();
-    var axisHeight = 500
-    let barheight = map(numBombs, 0, 65000, 0, axisHeight)
-    let statecol = map(numState, 0, 9, 50, 200)
+    var axisHeight = 1000
+    let barheight = map(barCharge, 0, 65000, 0, axisHeight)
+    // let statecol = map(numState, 0, 9, 50, 200)
 
-    fill(statecol);
-    rect(i * 20 + 10, axisHeight - barheight, 15, barheight)
+    // fill(statecol);
+    rect(i * 20 + 30, axisHeight - barheight, 30, barheight)
 
   }
 // save('statenuke.svg')
