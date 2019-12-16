@@ -11,3 +11,7 @@ Tried to compare how GDP growth affect Military expansions,
 Sketch2
 I have looked up what if Nuclear weapon test would changed into something positive. I initially looked up how much moeny each countries spend for tests and compare with nuclear plant. But I could not find actual money for building nuclear plants.
 I am trying to compare nuclear tests with how much NYC uses electrocity per hour.
+
+
+SVG file
+I have came up with idea that even if total number of Nuclear stockfiles are dropping, number of nuclear states are increasing.
