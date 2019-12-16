@@ -25,16 +25,30 @@ function setup() {
 function draw() {
     background(255)
 
+    var now = clock();
+
+  
+    
     noStroke();
-    fill(0);
+    if(now.season == 1){
+      fill(100, 200, 100)
+    
+    }else if(now.season == 2){
+      fill(200, 100, 150)
+    }else if(now.season == 3){
+      fill(100, 150, 200)
+    }else if(now.season == 4){
+      fill(100)
+    }
+      
     rect(0, 0, 200, 400)
+    
 
 
-var now = clock();
 
 let sc = now.sec;
 
-fill(0);
+
 circle(width/2, height/2, 10);
 
 
@@ -52,25 +66,26 @@ var secLocation = pointAt(width/2, height/2, hourAngle - 90, 150);
 // // var otherLocation = pointAt(secLocation.x, secLocation.y, secAngle, 30)
 var minLocation = pointAt(width/2, height/2, minAngle - 90, secc);
 
-var dayy = map(now.day, 0, 31, 0, 310)
+var dayy = map(now.day, 0, 31, 0, 110)
 
-noStroke();
+
 if(now.hours < 13){
   fill('blue')
   }else{
     fill('red');
   }
-circle(secLocation.x, secLocation.y, 30);
+  circle(secLocation.x, secLocation.y, 10);
 
 stroke(200, 0, 100);
-if(now.min <31){
-  stroke(0, 100, 200);
-}
+// if(now.min <31){
+//   stroke(0, 100, 200);
+// }
 
 strokeWeight(6);
 
 line(width/2, height/2, minLocation.x, minLocation.y);
 
+noStroke();
 circle(secLocation.x, secLocation.y, dayy);
 
 
